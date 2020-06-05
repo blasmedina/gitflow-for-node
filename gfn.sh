@@ -165,7 +165,8 @@ commit() {
 merge () {
   local ORIGIN=$1
   local DESTINATION=$2
-  git checkout $DESTINATION && git merge --no-ff --no-edit --gpg-sign --no-commit $ORIGIN
+  # git checkout $DESTINATION && git merge --squash --no-ff --no-edit --gpg-sign --no-commit $ORIGIN
+  git checkout $DESTINATION && git merge --squash --no-edit --gpg-sign --no-commit $ORIGIN
 }
 
 update_pkg_version() {
